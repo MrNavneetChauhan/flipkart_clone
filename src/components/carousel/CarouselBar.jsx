@@ -31,7 +31,7 @@ export const CarouselBar = () => {
       >
             {
                 carouselData.map(item=>(
-                  <img className={classes.carousel_img} src={item.url} alt="" />
+                  <img key={Date.now()} className={classes.carousel_img} src={item.url} alt="" />
                 ))
             }
         </Carousel>

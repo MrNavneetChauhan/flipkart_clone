@@ -9,7 +9,7 @@ export const Navbar = () => {
     <div className={classes.navbar} >
 
     {NavbarData.map((item)=>(
-      <div  className={classes.item_div} >
+      <div key={Date.now()+Math.random(5)} className={classes.item_div} >
         <img src={item.url} alt="" />
         <div>
         <p className='item_text' >{item.text}</p>

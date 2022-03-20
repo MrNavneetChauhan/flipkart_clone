@@ -66,7 +66,7 @@ export const Slider = ({ showDiv }) => {
               itemClass="carousel-item-padding-40-px"
             >
               {products.map((item) => (
-                <div className={classes.item_div}>
+                <div key={item.id} className={classes.item_div}>
                   <img src={item.url} alt="" />
                   <div>
                     <p>{item.title.shortTitle}</p>

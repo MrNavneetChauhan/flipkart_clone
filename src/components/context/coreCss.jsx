@@ -1,4 +1,4 @@
-import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider, createTheme, makeStyles } from '@material-ui/core/styles';
 import { createContext } from 'react';
 import { CssBaseline } from '@material-ui/core';
 
@@ -6,7 +6,7 @@ const Template = createContext();
 
 
 export const TemplateProvider = ({children})=>{
-    const theme = createMuiTheme({
+    const theme = createTheme({
         overrides:{
             MuiDialog:{
                 paperWidthSm:{
@@ -25,7 +25,7 @@ export const TemplateProvider = ({children})=>{
 
     return (
 
-        <Template.Provider>
+        <Template.Provider value={0} >
             <ThemeProvider theme={theme} >
                 <CssBaseline/>
                 {children}

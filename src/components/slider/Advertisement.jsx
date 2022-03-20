@@ -26,7 +26,7 @@ const classes = useStyle()
     <div className={classes.middle_container} >
         {
             middleAdvertData.map((item)=>(
-                <img className={classes.middle_img} src={item.url} alt="" />
+                <img key={Date.now()+Math.random(2)} className={classes.middle_img} src={item.url} alt="" />
             ))
         }
     </div>

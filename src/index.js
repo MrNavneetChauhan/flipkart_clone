@@ -1,17 +1,18 @@
+import {store} from "./redux/store"
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider} from 'react-redux';
+ 
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { TemplateProvider } from './components/context/coreCss';
 import { UserContextProvider } from './components/context/user.context';
-import { store } from './components/redux/store';
 import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store} >
+    <ReduxProvider store={store} >
     <UserContextProvider>
     <TemplateProvider>
     <BrowserRouter>
@@ -19,7 +20,8 @@ ReactDOM.render(
     </BrowserRouter>
     </TemplateProvider>
     </UserContextProvider>
-    </Provider>
+    </ReduxProvider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
