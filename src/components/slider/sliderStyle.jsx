@@ -127,6 +127,11 @@ display:"none"
 
   full_left_div:{
     width:"100%"
+  },
+
+  item_link:{
+    textDecoration:"none",
+    color:"inherit"
   }
 
 

@@ -5,7 +5,9 @@ import "react-multi-carousel/lib/styles.css";
 import { responsive } from "./sliderStyle";
 import Countdown from "react-countdown";
 import { useDispatch, useSelector } from "react-redux";
-import {gettingFunction} from "../../redux/products/actions"
+import {gettingFunction} from "../../redux/products/actions";
+import { Link } from "react-router-dom";
+
 export const Slider = ({ showDiv }) => {
   // in this area i will do the work of redux and fetching api
 
@@ -81,7 +83,8 @@ export const Slider = ({ showDiv }) => {
               itemClass="carousel-item-padding-40-px"
             >
               {data.map((item) => (
-                <div key={item.id} className={classes.item_div}>
+                <Link key={item._id} className={classes.item_link} to={`/product/${item._id}`} >
+                <div className={classes.item_div}>
                   <img src={item.url} alt="" />
                   <div>
                     <p>{item.title.shortTitle}</p>
@@ -89,6 +92,7 @@ export const Slider = ({ showDiv }) => {
                     <p>{item.tagline}</p>
                   </div>
                 </div>
+                </Link>
               ))}
             </Carousel>
           </div>
