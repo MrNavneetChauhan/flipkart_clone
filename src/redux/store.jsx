@@ -7,5 +7,4 @@ const reducer = combineReducers({
     productReducer
 })
 
-export const store = createStore(applyMiddleware(reducer));
-console.log(store.getState())
+export const store = createStore(reducer, applyMiddleware(thunk));

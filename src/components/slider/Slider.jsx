@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStyle } from "./sliderStyle";
-import { products } from "../../Data/sliderData";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { responsive } from "./sliderStyle";
 import Countdown from "react-countdown";
-
+import { useDispatch, useSelector } from "react-redux";
+import {gettingFunction} from "../../redux/products/actions"
 export const Slider = ({ showDiv }) => {
+  // in this area i will do the work of redux and fetching api
+
+  const {loading,error,data} = useSelector((store)=>store.productReducer)
+  const dispatch = useDispatch();
+
+  const getData = ()=>{
+    dispatch(gettingFunction())
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+
+
+// 
   const classes = useStyle();
   const timer_img =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg";
@@ -26,7 +41,7 @@ export const Slider = ({ showDiv }) => {
     }
   };
 
-  return (
+  return loading? <p>Loading.......</p> :  (
     <div className={classes.slider_container}>
       {/* will divide this container into two part left and right */}
       <div className={showDiv ? classes.left_div : classes.full_left_div}>
@@ -65,7 +80,7 @@ export const Slider = ({ showDiv }) => {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
-              {products.map((item) => (
+              {data.map((item) => (
                 <div key={item.id} className={classes.item_div}>
                   <img src={item.url} alt="" />
                   <div>

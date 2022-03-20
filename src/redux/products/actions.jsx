@@ -24,7 +24,6 @@ export const getProductsError = ()=>{
 export const gettingFunction = ()=>(dispatch)=>{
     dispatch(getProductsLoading())
     axios.get("http://localhost:2022/products").then(({data})=>{
-    console.log(data)
     dispatch(getProductSuccess(data))
     })
 }
