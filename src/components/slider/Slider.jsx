@@ -12,6 +12,7 @@ export const Slider = ({ showDiv }) => {
   // in this area i will do the work of redux and fetching api
 
   const {loading,error,data} = useSelector((store)=>store.productReducer)
+  
   const dispatch = useDispatch();
 
   const getData = ()=>{

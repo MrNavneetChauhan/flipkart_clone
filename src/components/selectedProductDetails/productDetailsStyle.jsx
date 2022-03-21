@@ -141,25 +141,57 @@ export const useStyles = makeStyles({
     },
 
     delievery_div:{
-        border:"1px solid black",
+        // border:"1px solid black",
         width:"98%",
         height:"100px",
         display:"flex",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        marginTop:"40px"
 
+    },
+
+    deliever_to:{
+color:"gray",
+fontSize:"15px",
+marginLeft:"8px",
     },
 
     services_div:{
         display:"flex",
-        border:"1px solid black",
+        // border:"1px solid black",
         gap:"60px",
+        '&>p:nth-child(1)':{
+            color:"gray",
+            fontSize:"15px",
+            fontWeight:"500"
+        },
         '&>div':{
-            border:"1px solid red",
+            // border:"1px solid red",
             '&>div':{
                 display:"flex",
                 gap:"10px"
             }
         }
+    },
+
+    pincode:{
+        borderBottom:"2px solid #2874F0",
+        display:'flex',
+        justifyContent:"space-between",
+        width:"250px",
+        height:"40px",
+        alignItems:"center",
+        position:"relative",
+        top:"20px",
+       
+
+        '&>input':{
+            width:"80%",
+            height:"30px",
+            border:"none",
+            outline:"none",
+        }
+
     }
 
 })

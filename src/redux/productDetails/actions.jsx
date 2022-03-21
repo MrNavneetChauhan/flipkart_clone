@@ -20,10 +20,12 @@ export const getProductDetailsError = ()=>{
     }
 }
 
-export const gettingFunction = (id)=>(dispatch)=>{
+export const gettingFunctionDetails = (id)=>(dispatch)=>{
     dispatch(getProductDetailsLoading())
     axios.get(`http://localhost:2022/products/${id}`).then(({data})=>{
-        // console.log(data)
+        console.log("daaaaaattttttta",data)
+        localStorage.setItem("data",JSON.stringify(data))
         dispatch(getProductDetailsSuccess(data))
     })
+    
 }
